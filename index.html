@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>aura.ai – Open-Source Repositories</title>
+  <meta name="description" content="Open-source software developed and used in the aura.ai project (Upper Rhine Interreg – Wissenschaftsoffensive)">
+  <style>
+    :root{
+      /* Palette derived from the provided aura.ai logo (purple focus) */
+      --bg:#0f0a1a;           /* deep background */
+      --card:#1a1430;         /* card background */
+      --fg:#f5f6fb;           /* primary text */
+      --muted:#b9c0cf;        /* secondary text */
+      --primary:#6b3fb3;      /* brand purple */
+      --primary-600:#5f37a0;
+      --primary-300:#a583e0;
+      --border:rgba(255,255,255,.1);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif}
+    a{color:var(--fg);text-decoration:none;border-bottom:1px solid rgba(107,63,179,.35)}
+    a:hover{color:var(--primary-300);border-color:var(--primary)}
+    header{padding:2rem 1rem;border-bottom:1px solid var(--border);background:linear-gradient(180deg, rgba(107,63,179,.15), transparent)}
+    .wrap{max-width:1000px;margin:0 auto}
+    .brand{display:flex;gap:1rem;align-items:center}
+    .brand img{width:56px;height:56px;display:block}
+    h1{font-size:clamp(1.6rem,2.6vw,2.4rem);margin:0}
+    p.lead{margin:.25rem 0 0 0;color:var(--muted)}
+    main{padding:1.25rem 1rem 3rem}
+    section{margin:1.25rem 0 2rem}
+    h2{font-size:1.1rem;letter-spacing:.03em;text-transform:uppercase;color:var(--primary-300);margin:.25rem 0 .75rem}
+    .grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+    .card{background:var(--card);padding:1rem;border:1px solid var(--border);border-radius:.7rem}
+    .card h3{margin:.1rem 0 .35rem;font-size:1.05rem;color:var(--primary-300)}
+    .card p{margin:0 0 .5rem 0;color:var(--muted);line-height:1.4}
+    footer{padding:1rem 1rem 2rem;color:var(--muted);border-top:1px solid var(--border)}
+    .funding{margin-top:.5rem;color:var(--muted)}
+    .badge{display:inline-block;background:rgba(107,63,179,.2);color:var(--fg);border:1px solid var(--primary);border-radius:.5rem;padding:.25rem .5rem;font-size:.9rem}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="brand">
+        <!-- Replace SVG with your uploaded PNG if preferred -->
+        <img src="assets/aura-ai-logo.png" alt="aura.ai logo">
+        <div>
+          <h1>aura.ai – Open-Source Software</h1>
+          <p class="lead">Repositories developed and used for experiments in the aura.ai project.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="wrap">
+      <section>
+        <h2>HKA Repositories</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>P2P Preprocessing + Flower Federated Learning</h3>
+            <p>Secure decentralized preprocessing prior to Flower FL training. One server repo and one client repo. Clients send contact details to the server, which distributes them so clients can connect to each other.</p>
+            <div class="links">
+              <a href="https://gitlab.com/JsAntoPe/flowerserverdeployable" target="_blank" rel="noopener" class="badge">Server</a>
+              <a href="https://gitlab.com/JsAntoPe/flowerclientdeployable" target="_blank" rel="noopener" class="badge">Client</a>
+              <a href="https://gitlab.com/hka-aura.ai/decentral_preprocessing" target="_blank" rel="noopener" class="badge">Decentralized Preprocessing</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Gretel Pathing</h3>
+            <p>Gretel framework with project-specific adaptations. No data included due to sensitivity. Works with datasets following the Matomo schema.</p>
+            <div class="links">
+              <a href="https://gitlab.com/hka-aura.ai/pathing" target="_blank" rel="noopener" class="badge">Repository</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>FML-DG Platform</h3>
+            <p>Platform for Data Governance in Federated Learning. Evaluated together with partners from the University of Cádiz.</p>
+            <div class="links">
+              <a href="https://github.com/HKA-IDSS/FML-DG_Platform/tree/main" target="_blank" rel="noopener" class="badge">Repository</a>
+            </div>
+          </article>
+          <article class="card">
+            <h3>On the Utility of Non-i.i.d. IoT Data for FL</h3>
+            <p>Experiments and reproducibility code for the paper <em>On the Utility of Non-i.i.d. Tabular IoT Data for Federated Learning</em>.</p>
+            <div class="links">
+              <a href="https://github.com/HKA-IDSS/ValueNonIIDTabularFLIoT" target="_blank" rel="noopener" class="badge">Repository</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>FHNW Repositories</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>CoNym Authentication Proxy Subsystem</h3>
+            <p>Biometric authentication proxy with pseudonym exchange between Raumobil and INIT systems, enabling privacy-preserving behavioral authentication.</p>
+            <div class="links">
+              <a href="https://github.com/orgs/fhnw-aura-ai/repositories" target="_blank" rel="noopener" class="badge">Organization & Repos</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer>
+    <div class="wrap">
+      <div>© <span id="year"></span> aura.ai · Open-source overview</div>
+      <div class="funding">The project aura.ai is co-funded by the European Union through the Interreg Upper Rhine programme.</div>
+      <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.1)">
+        <img src="assets/interreg-logo.png" alt="Interreg Upper Rhine" style="height:80px;display:block">
+      </div>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
