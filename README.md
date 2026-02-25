@@ -9,6 +9,3 @@ Static single-page site listing open-source repositories from the aura.ai projec
    - **Source:** `Deploy from a branch`
    - **Branch:** `main` → `/root`
 4. After ~1 minute the site will be available at `https://<username>.github.io/<repo>/`.
-
-## Logo
-Replace `assets/aura-ai-logo.svg` with your uploaded PNG named `aura-ai-logo.png` and update the `<img>` tag path in `index.html` if needed. The color theme is aligned with the logo purple (#6b3fb3).
