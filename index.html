@@ -55,24 +55,49 @@
   <main>
     <div class="wrap">
       <section>
+        <h2>Aura Project</h2>
+        <p>The Aura.ai project aims to provide continuous authentication in mobility provider phone applications. For this, Machine Learning (ML) mechanisms are being developed, capable of inferring behavioral patterns from users during their interactions with the phone. Such patterns are then compared with the user’s usual behavioral patterns. If there is a match, the user is automatically authenticated without requiring further input. The project was divided into two main subprojects: Continuous Authentication, and Federated Learning. Each subproject features an architecture and some repositories with experimentation, which were made available on this webpage.</p>
+        <p>The Continuous Authentication (CA) subproject focuses on privacy-preserving, ML-based behavioral authentication for client–server mobility applications. It implements a framework in which behavioral data (e.g., sensor readings and interaction patterns) are preprocessed and encrypted directly on the client's device before being transmitted to the server. The server performs machine-learning inference on encrypted data using homomorphic encryption (HE), enabling continuous authentication without accessing raw behavioral information. The framework integrates:</p>
+        <ul>
+          <li>ML-based multi-source behavioral fusion, enabling robust authentication across heterogeneous sensor modalities.</li>
+          <li>Homomorphic encryption allows secure computation on encrypted behavioral embeddings.</li>
+          <li>Zero-knowledge proofs (zk-SNARKs) to ensure classifier decision integrity while preventing manipulation by attackers.</li>
+          <li>A key rollover mechanism to mitigate recently discovered cryptographic vulnerabilities in HE schemes.</li>
+          <li>Within aura.ai, the framework was integrated into a real-world public transport application. This included extending existing OAuth/OpenID-based infrastructures with an authentication proxy, enabling interoperability between different mobility providers while preserving strict privacy boundaries. The system was evaluated in a field test with real users, demonstrating practical feasibility and robustness against impersonation attempts. The code for the full CA framework is currently under submission and will be made publicly available upon completion of the review process.</li>
+        </ul>
+        <p>The Federated Learning (FL) subproject consists of a Data Governance (FML-DG Platform) platform applied to FL, combined with a decentralized preprocessing component. First, the FML-DG platform offers functionality to negotiate the goals and training settings, run the training under those settings, and collect provenance metadata from the process. Then, we also developed an experimental communication framework, where we introduced secure and decentralized preprocessing before the training process (FLTraining-Preprocessing). Finally, in this part we also offer two other interesting projects. We designed a path prediction ML model trained in federated data (Gretel-Pathing). Although the data is unavailable due to privacy reasons, we relied on the public data schema of Matomo. The second is a study in how heterogeneous tabular data affects the quality of ML models, and how to determine the quality of contribution from participants accurately in these heterogeneous scenarios (On the Utility of Non-i.i.d. IoT Data for FL).</p>
+      </section>
+      <section>
         <h2>HKA Repositories</h2>
         <div class="grid">
+          <article class="card">
+            <h3>Continuous Authentication Client + Server</h3>
+            <p>Client and server components for the Continuous Authentication subproject. The client service handles behavioral data collection and privacy-preserving preparation, while the server performs authentication-related processing and inference as part of the CA framework.</p>
+            <div class="links">
+              <a href="https://github.com/dmonsch/aura-ca-client-service" target="_blank" rel="noopener" class="badge">Client</a>
+              <a href="https://github.com/dmonsch/aura-ca-server-py" target="_blank" rel="noopener" class="badge">Server</a>
+            </div>
+          </article>
+
           <article class="card">
             <h3>P2P Preprocessing + Flower Federated Learning</h3>
             <p>Secure decentralized preprocessing prior to Flower FL training. One server repo and one client repo. Clients send contact details to the server, which distributes them so clients can connect to each other.</p>
             <div class="links">
-              <a href="https://gitlab.com/JsAntoPe/flowerserverdeployable" target="_blank" rel="noopener" class="badge">Server</a>
-              <a href="https://gitlab.com/JsAntoPe/flowerclientdeployable" target="_blank" rel="noopener" class="badge">Client</a>
+              <a href="https://github.com/HKA-IDSS/FlowerServerDeployable" target="_blank" rel="noopener" class="badge">Server</a>
+              <a href="https://github.com/HKA-IDSS/FlowerClientDeployable" target="_blank" rel="noopener" class="badge">Client</a>
+              <a href="https://github.com/HKA-IDSS/DockerFlowerTraining" target="_blank" rel="noopener" class="badge">Docker Compose</a>
               <a href="https://gitlab.com/hka-aura.ai/decentral_preprocessing" target="_blank" rel="noopener" class="badge">Decentralized Preprocessing</a>
             </div>
           </article>
+
           <article class="card">
             <h3>Gretel Pathing</h3>
             <p>Gretel framework with project-specific adaptations. No data included due to sensitivity. Works with datasets following the Matomo schema.</p>
             <div class="links">
-              <a href="https://gitlab.com/hka-aura.ai/pathing" target="_blank" rel="noopener" class="badge">Repository</a>
+              <a href="https://github.com/HKA-IDSS/GretelPathing" target="_blank" rel="noopener" class="badge">Repository</a>
             </div>
           </article>
+
           <article class="card">
             <h3>FML-DG Platform</h3>
             <p>Platform for Data Governance in Federated Learning. Evaluated together with partners from the University of Cádiz.</p>
@@ -80,6 +105,7 @@
               <a href="https://github.com/HKA-IDSS/FML-DG_Platform/tree/main" target="_blank" rel="noopener" class="badge">Repository</a>
             </div>
           </article>
+
           <article class="card">
             <h3>On the Utility of Non-i.i.d. IoT Data for FL</h3>
             <p>Experiments and reproducibility code for the paper <em>On the Utility of Non-i.i.d. Tabular IoT Data for Federated Learning</em>.</p>
